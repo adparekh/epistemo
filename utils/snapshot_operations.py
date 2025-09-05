@@ -32,6 +32,9 @@ class SnapshotOperations(BaseService):
                 elif status == "failed":
                     print("❌ Snapshot failed")
                     return False
+                elif status == "canceled":
+                    print("❌ Snapshot cancelled")
+                    return False
                 elif status == "running":
                     print("🔄 Still processing...")
                     time.sleep(self.settings.poll_delay)
